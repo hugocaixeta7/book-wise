@@ -11,7 +11,3 @@ $livros = [
     ['id' => 8, 'titulo' => 'A Metamorfose', 'autor' => 'Franz Kafka', 'descricao' => 'A transformação de Gregor Samsa em inseto.'],
     ['id' => 9, 'titulo' => 'O Hobbit', 'autor' => 'J.R.R. Tolkien', 'descricao' => 'A aventura de Bilbo Bolseiro.']
 ];
-
-
-
-?>

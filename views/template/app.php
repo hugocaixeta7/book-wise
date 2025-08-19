@@ -16,7 +16,7 @@
         <nav class="mx-auto max-w-screen-lg flex justify-between py-4">
             <div class="font-bold text-xl tracking-wide">Book Wise</div>
             <ul class="flex space-x-4 font-bold">
-                <li><a href="/" class="text-lime-500">Explorar</a></li>
+                <li><a href="/book-wise" class="text-lime-500">Explorar</a></li>
                 <li><a href="/meus-livros.php" class="hover:underline">Meus Livros</a></li>
             </ul>
             <ul>
@@ -26,7 +26,7 @@
 </header>
 
     <main class="mx-auto max-w-screen-lg space-y-6">
-        <?php require "views/{$view}.view.php"; ?>
+        <?php require "views/{$view}.view.php"?>
     </main>
 
 </body>

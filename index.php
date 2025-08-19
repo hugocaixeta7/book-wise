@@ -1,6 +1,8 @@
 <?php
-require 'dados.php';
+echo "SEMPRE CAI NO INDEX.PHP";
+$controller = 'index';
+if (isset ($_SERVER['PATH_INFO'])) {
+    $controller = str_replace('/', '', $_SERVER['PATH_INFO']);
+}
 
-$view = "index";
-require "views/template/app.php"
-?>
+require "controllers/{$controller}.controller.php";
