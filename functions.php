@@ -8,7 +8,7 @@ function view($view, $data = []) {
     require "views/template/app.php";
 }
 
-function dd(...$dump) {
+function dgocheff(...$dump) {
     var_dump($dump);
     die();
 }
