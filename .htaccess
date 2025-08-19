@@ -1,0 +1,9 @@
+RewriteEngine On
+RewriteBase /book-wise/
+
+# Se o arquivo ou diretório existir, não reescreve
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redireciona tudo para index.php
+RewriteRule ^ index.php [L]
