@@ -18,16 +18,19 @@ class DB
      *
      * @return array[Livro]
      */
-    public function livros() {
-        $query = $this->db->query("select * from livros");
-        $items = $query->fetchAll();
-        return array_map(fn($item) => Livro::make($item), $items);
+    public function livros($pesquisa = '') {
+        $prepare = $this->db->prepare("select * from livros where usuario_id = 1 and titulo like :pesquisa");
+        $prepare->bindValue(':pesquisa', "%$pesquisa%");
+        $prepare->setFetchMode(PDO::FETCH_CLASS, Livro::class);
+        $prepare->execute();        
+        return $prepare->fetchAll();
     }
 
     public function livro($id) {
-        $sql = "SELECT * FROM livros WHERE id = " . $id;
-        $query = $this->db->query($sql);
-        $items = $query->fetchAll();
-        return array_map(fn($item) => Livro::make($item), $items)[0];
+        $prepare = $this->db->prepare("select * from livros where id = :id");
+        $prepare->bindValue('id', $id);
+        $prepare->setFetchMode(PDO::FETCH_CLASS, Livro::class);
+        $prepare->execute();        
+        return $prepare->fetch();
     }
 }
