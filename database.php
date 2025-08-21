@@ -1,5 +1,5 @@
 <?php
-class DB
+class Database
 {
     // Conexão com o banco de dados
     private $db;
@@ -7,7 +7,7 @@ class DB
         $this->db = new PDO($this->getDsn($config));
     }
 
-    private function getDsn($config) {
+        private function getDsn($config) {
         $driver = $config['driver'];
         unset($config['driver']);
         $dsn = $driver . ':' . http_build_query($config, '', ';');
@@ -25,4 +25,4 @@ class DB
     }
 }
 
-$database = new DB($config['database']);
+$database = new Database($config['database']);
