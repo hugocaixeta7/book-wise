@@ -8,9 +8,14 @@ function view($view, $data = []) {
 }
 
 function dgocheff(...$dump) {
-    var_dump($dump);
+    cmdzin($dump);
     die();
 }
+
+function cmdzin(...$dump) {
+    var_dump($dump);
+}
+
 
 function abort($code) {
     http_response_code($code);

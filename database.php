@@ -24,3 +24,5 @@ class DB
         return $prepare;
     }
 }
+
+$database = new DB($config['database']);
