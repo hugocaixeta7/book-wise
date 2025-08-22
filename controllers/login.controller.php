@@ -16,19 +16,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // 2. Fazer uma consulta no banco de dados com email e senha
     $usuario = $database->query(
-        query: "select * from usuarios where email = :email and senha = :senha",
-        params: compact('email', 'senha')
+        query: "select * from usuarios where email = :email",
+        params: compact('email')
     )
         ->fetch();
 
     if ($usuario) {
+        // validar a senha
+        if(! password_verify($_POST['senha'], $usuario->senha)) {
+            flash()->push('validacoes_login', ['Usuário ou senha estão incorretos!']);
+            header('location: login');
+            exit();
+        }
         // 3. se existir nós vamos adicionar na sessão que o usúario está autenticado
         $_SESSION['auth'] = $usuario;
         flash()->push('mensagem', 'Seja bem vindo ' . $usuario->nome . '!');
         header('location: /book-wise');
         exit();
     }
-    // 4. Mudar a informação no nosso navbar pra mostrar o nome do usuário (no app.php)
 }
 
 view('login');
