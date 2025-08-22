@@ -20,7 +20,10 @@ function cmdzin(...$dump) {
 function abort($code) {
     http_response_code($code);
     view($code);
-    die();
+    exit();
 }
 
+function flash() {
+    return new Flash;
+}
 

@@ -1,6 +1,4 @@
 <?php
-$mensagem = $_REQUEST['mensagem'] ?? '';
-
 // 1. Receber o formulário com email e senha
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $email = $_POST['email'];
@@ -11,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         'senha' => ['required']
     ], $_POST);
 
-    if($validacao->naoPassou()) {
+    if($validacao->naoPassou('login')) {
         header('location: login');
         exit();
     }
@@ -26,11 +24,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($usuario) {
         // 3. se existir nós vamos adicionar na sessão que o usúario está autenticado
         $_SESSION['auth'] = $usuario;
-        $_SESSION['mensagem'] = 'Seja bem vindo ' . $usuario->nome . '!';
+        flash()->push('mensagem', 'Seja bem vindo ' . $usuario->nome . '!');
         header('location: /book-wise');
         exit();
     }
     // 4. Mudar a informação no nosso navbar pra mostrar o nome do usuário (no app.php)
 }
 
-view('login', compact('mensagem'));
+view('login');
