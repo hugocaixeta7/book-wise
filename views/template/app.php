@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,9 @@
 </head>
 
 <body class="bg-stone-950 text-stone-200">
-   
-<!-- Menu de Navegação -->
-<header class="bg-stone-900">
+
+    <!-- Menu de Navegação -->
+    <header class="bg-stone-900">
         <nav class="mx-auto max-w-screen-lg flex justify-between py-4">
             <div class="font-bold text-xl tracking-wide">Book Wise</div>
             <ul class="flex space-x-4 font-bold">
@@ -20,14 +21,19 @@
                 <li><a href="/book-wise/meus-livros" class="hover:underline">Meus Livros</a></li>
             </ul>
             <ul>
-                <li><a href="/book-wise/login">Fazer Login</a></li>
+                <?php if (isset($_SESSION['auth'])): ?>
+                    <li><a href="/book-wise/logout">Oi, <?=$_SESSION['auth']['nome']?></a></li>
+                <?php else: ?>
+                    <li><a href="/book-wise/login">Fazer Login</a></li>
+                <?php endif; ?>
             </ul>
         </nav>
-</header>
+    </header>
 
     <main class="mx-auto max-w-screen-lg space-y-6">
-        <?php require "views/{$view}.view.php"?>
+        <?php require "views/{$view}.view.php" ?>
     </main>
 
 </body>
+
 </html>
