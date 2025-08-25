@@ -21,8 +21,9 @@
                 <li><a href="/book-wise/meus-livros" class="hover:underline">Meus Livros</a></li>
             </ul>
             <ul>
-                <?php if (isset($_SESSION['auth'])): ?>
-                    <li><a href="/book-wise/logout">Oi, <?= $_SESSION['auth']['nome'] ?></a></li>
+                <?php 
+                if (auth()): ?>
+                    <li><a href="/book-wise/logout">Oi, <?= auth()->nome?></a></li>
                 <?php else: ?>
                     <li><a href="/book-wise/login">Fazer Login</a></li>
                 <?php endif; ?>

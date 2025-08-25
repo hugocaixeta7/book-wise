@@ -17,13 +17,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // 2. Fazer uma consulta no banco de dados com email e senha
     $usuario = $database->query(
         query: "select * from usuarios where email = :email",
+        class: Usuario::class,
         params: compact('email')
-    )
-        ->fetch();
-
+    )->fetch();
+    
+    // validar a senha
     if ($usuario) {
-        // validar a senha
-        if(! password_verify($_POST['senha'], $usuario->senha)) {
+        $senhaDoPost = $_POST['senha'];
+        $senhaDoBanco = $usuario->senha; 
+
+        if(! password_verify($senhaDoPost, $senhaDoBanco)) {
             flash()->push('validacoes_login', ['Usuário ou senha estão incorretos!']);
             header('location: login');
             exit();

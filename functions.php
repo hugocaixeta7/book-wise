@@ -41,3 +41,10 @@ function config($chave = null)
     }
     return $config;
 }
+
+function auth() {
+    if(! isset($_SESSION['auth'])) {
+        return null;
+    }
+    return $_SESSION['auth'];
+}
