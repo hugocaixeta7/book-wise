@@ -82,7 +82,7 @@ class Validacao
     private function strong($campo, $valor)
     {
         if (!strpbrk($valor, '!@#$%&*()')) {
-            $this->validacoes[] = "O $campo precisa ter um * nela.";
+            $this->validacoes[] = "O $campo precisa ter algum caracter especial (!@#$%&*()) nela.";
         }
     }
 
