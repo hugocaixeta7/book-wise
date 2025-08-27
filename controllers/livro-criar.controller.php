@@ -29,7 +29,7 @@ $validacao = Validacao::validar([
 
     $novoNome = md5(rand());
     $extensao = pathinfo($_FILES['imagem']['name'], PATHINFO_EXTENSION);
-    $imagem = "images/$novoNome.$extensao";
+    $imagem = "public/images/$novoNome.$extensao";
     move_uploaded_file($_FILES['imagem']['tmp_name'], $imagem);
 
     $database->query(
