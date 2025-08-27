@@ -34,16 +34,23 @@ class Livro
 
     public static function get($id)
     {
-        return(new self)->query('l.id = :id', ['id' => $id])->fetch();
+        return (new self)->query('l.id = :id', ['id' => $id])->fetch();
     }
 
     public static function all($filtro = '')
     {
-        return(new self)->query('titulo like :filtro', ['filtro' => "%$filtro%"])->fetchAll();
+        return (new self)->query('titulo like :filtro', ['filtro' => "%$filtro%"])->fetchAll();
     }
 
     public static function meus($usuario_id)
     {
-        return(new self)->query('l.usuario_id = :usuario_id', ['usuario_id' => $usuario_id])->fetchAll();
+        return (new self)->query('l.usuario_id = :usuario_id', ['usuario_id' => $usuario_id])->fetchAll();
+    }
+
+    public static function deletar($id)
+    {
+        $database = new Database(config('database'));
+        $query = "DELETE FROM livros WHERE id = :id";
+        return $database->query($query, null, ['id' => $id]);
     }
 }

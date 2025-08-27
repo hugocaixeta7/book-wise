@@ -17,13 +17,13 @@
                 <i data-lucide="search" class="w-6 h-6 text-muted-foreground group-focus-within:text-primary transition-colors duration-300"></i>
             </div>
             <input
-                type="text"
-                name="pesquisar"
-                class="w-full pl-16 pr-32 py-6 bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl text-lg placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300 hover:bg-card/70"
-                placeholder="Pesquisar por título, autor, gênero ou ISBN...">
+            type="text"
+            name="pesquisar"
+            class="w-full pl-16 pr-32 py-6 bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl text-lg placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all duration-300 hover:bg-card/70"
+            placeholder="Pesquisar por título">
             <button type="submit" class="absolute inset-y-0 right-0 pr-3 flex items-center">
                 <div class="bg-gradient-to-r from-primary to-accent text-white px-8 py-3 rounded-xl hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 transform hover:scale-105 flex items-center space-x-2">
-                    <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                    <i class="fa-solid fa-magnifying-glass"></i>
                     <span class="font-semibold">Buscar</span>
                 </div>
             </button>

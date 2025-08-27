@@ -10,15 +10,6 @@
 
     <div class="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden mb-12 animate-scale-in">
 
-        <div class="flex justify-end gap-3 px-4 py-2">
-            <button class="bg-neutral-900 text-white px-4 py-2 rounded-md shadow hover:bg-neutral-700 transition" name="editar">
-                <i class="fa-solid fa-pen-to-square"></i>
-            </button>
-            <button class="bg-neutral-900 text-white px-4 py-2 rounded-md shadow hover:bg-neutral-700 transition">
-                <i class="fa-solid fa-trash"></i>
-            </button>
-        </div>
-
         <div class="grid lg:grid-cols-5 gap-12 p-12">
             <div class="lg:col-span-2">
                 <div class="aspect-[3/4] overflow-hidden rounded-2xl bg-gradient-to-br from-muted/20 to-muted/10 relative group">
@@ -33,6 +24,7 @@
             <div class="lg:col-span-3 space-y-8">
                 <div>
                     <h1 class="text-4xl lg:text-5xl font-bold mb-4 gradient-text"><?= $livro->titulo ?></h1>
+                    <p class="text-2xl text-muted-foreground mb-6 text-foreground font-semibold"> Lançado em: <?= $livro->ano_de_lancamento ?></p>
                     <p class="text-2xl text-muted-foreground mb-6">por <span class="text-foreground font-semibold"><?= $livro->autor ?></span></p>
 
                     <div class="flex items-center space-x-6 mb-8">
@@ -89,7 +81,7 @@
                                         <i data-lucide="user" class="w-6 h-6 text-primary"></i>
                                     </div>
                                     <div>
-                                        <p class="font-semibold text-lg">Leitor Anônimo</p>
+                                        <p class="font-semibold text-lg"><?= $avaliacao->nome_usuario ?></p>
                                         <div class="flex items-center space-x-1 mt-1">
                                             <?php for ($i = 1; $i <= 5; $i++): ?>
                                                 <i data-lucide="star" class="w-4 h-4 <?= $i <= $avaliacao->nota ? 'text-yellow-400 fill-current' : 'text-muted-foreground/40' ?>"></i>
@@ -115,7 +107,6 @@
                 </div>
             <?php endif; ?>
         </div>
-
         <div class="lg:col-span-1 animate-fade-in-up" style="animation-delay: 0.3s;">
             <?php if (auth()): ?>
                 <div class="bg-card/50 backdrop-blur-sm border border-border/50 rounded-2xl overflow-hidden sticky top-32">

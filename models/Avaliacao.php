@@ -6,4 +6,5 @@ class Avaliacao {
     public $livro_id;
     public $avaliacao;
     public $nota;
+    public $nome_usuario;
 }

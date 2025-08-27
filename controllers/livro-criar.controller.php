@@ -8,7 +8,6 @@ if($_SERVER['REQUEST_METHOD'] != 'POST') {
 if(!auth()) {
     abort(403);
 }
-
 $usuario_id = auth()->id;
 $titulo = $_POST['titulo'];
 $autor  = $_POST['autor'];
