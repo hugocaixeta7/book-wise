@@ -53,4 +53,29 @@ class Livro
         $query = "DELETE FROM livros WHERE id = :id";
         return $database->query($query, null, ['id' => $id]);
     }
+
+    public static function update($id, $dados)
+    {
+        $database = new Database(config('database'));
+
+        $query = "UPDATE livros 
+              SET titulo = :titulo, autor = :autor, descricao = :descricao, ano_de_lancamento = :ano_de_lancamento";
+
+        $params = [
+            'id' => $id,
+            'titulo' => $dados['titulo'],
+            'autor' => $dados['autor'],
+            'descricao' => $dados['descricao'],
+            'ano_de_lancamento' => $dados['ano_de_lancamento']
+        ];
+
+        if (!empty($dados['imagem'])) {
+            $query .= ", imagem = :imagem";
+            $params['imagem'] = $dados['imagem'];
+        }
+
+        $query .= " WHERE id = :id";
+
+        return $database->query($query, null, $params);
+    }
 }

@@ -45,6 +45,7 @@
                                 </div>
                             </div>
                             <div class="p-6 space-y-4">
+
                                 <div>
                                     <a href="livro?id=<?= $livro->id ?>" class="font-bold text-lg hover:text-primary transition-colors line-clamp-2 mb-2 block">
                                         <?= $livro->titulo ?>
@@ -67,17 +68,20 @@
                                         <i data-lucide="bookmark" class="w-4 h-4 text-primary"></i>
                                     </div>
                                 </div>
-                                <p class="text-sm text-muted-foreground line-clamp-3 leading-relaxed">
+                                <p class="text-sm text-muted-foreground line-clamp-2">
                                     <?= $livro->descricao ?>
                                 </p>
-                                <!-- Contêiner dos botões, um ao lado do outro -->
-                                <div class="flex justify-end gap-3 pt-4">
-                                    <!-- Botão de editar -->
-                                    <button class="bg-neutral-900 text-white px-4 py-2 rounded-md shadow hover:bg-neutral-700 transition" name="editar">
-                                        <i class="fa-solid fa-pen-to-square"></i>
-                                    </button>
 
-                                    <!-- Form de deletar -->
+                                <div class="flex justify-end gap-3 pt-4">
+                                    <!-- update -->
+                                    <form method="GET" action="/book-wise/editar_livro">
+                                        <input type="hidden" name="id" value="<?= $livro->id ?>">
+                                        <button type="submit" class="bg-neutral-900 text-white px-4 py-2 rounded-md shadow hover:bg-neutral-700 transition">
+                                            <i class="fa-solid fa-pen-to-square"></i>
+                                        </button>
+                                    </form>
+
+                                    <!-- delete -->
                                     <form method="POST">
                                         <input type="hidden" name="delete_livro" value="<?= $livro->id ?>">
                                         <button type="submit" class="bg-neutral-900 text-white px-4 py-2 rounded-md shadow hover:bg-red-500 transition">
