@@ -33,7 +33,7 @@ Inspirado em um módulo do curso de PHP da **Rocketseat**, o projeto foi ampliad
 
 ---
 
-##🎨 Layout
+## 🎨 Layout
 
 O layout foi totalmente redesenhado, com base na ideia do curso da Rocketseat, mas trazendo uma interface exclusiva e mais amigável, em modo escuro e com destaque para os livros em cards interativos.
 
