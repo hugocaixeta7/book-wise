@@ -5,14 +5,14 @@ Inspirado em um módulo do curso de PHP da **Rocketseat**, o projeto foi ampliad
 
 ---
 
-## ✨ Funcionalidades  
+## Funcionalidades  
 
-- 🔎 **Explorar livros**: navegue por uma coleção curada de obras literárias.  
-- 📖 **Visualização de detalhes**: veja informações como título, autor, ano e sinopse.  
-- ⭐ **Avaliação de livros**: usuários podem avaliar os livros e visualizar notas médias.  
-- 🔐 **Autenticação de usuários**: login e gerenciamento de sessões (quando implementado).  
-- 📚 **Destaques personalizados**: recomendações de livros em destaque.  
-- 🎨 **Design moderno**: interface criada com TailwindCSS, em modo escuro.  
+- **Explorar livros**: navegue por uma coleção curada de obras literárias.  
+- **Visualização de detalhes**: veja informações como título, autor, ano e sinopse.  
+- **Avaliação de livros**: usuários podem avaliar os livros e visualizar notas médias.  
+- **Autenticação de usuários**: login e gerenciamento de sessões (quando implementado).  
+- **Destaques personalizados**: recomendações de livros em destaque.  
+- **Design moderno**: interface criada com TailwindCSS, em modo escuro.  
 
 ---
 
